@@ -4,8 +4,8 @@ const connectToMongo = require('./config/db');
 
 connectToMongo();
 
-app.listen(CFG['SERVER_PORT'], () => {
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
     console.log('Server with GraphQL functionality started');
-    console.log('ENDPOINTS:');
-    console.log(`http://localhost:${CFG['SERVER_PORT']}${CFG['GRAPHQL_API']}`);
-});
+ });
