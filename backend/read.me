@@ -1,0 +1,61 @@
+query {
+  user(id: "60c72b2f9b1e8b003f0b6f49") {
+    id
+    username
+    email
+    created_at
+    updated_at
+  }
+}
+
+
+mutation {
+  addUser(username: "newUser", email: "newuser@example.com", password: "password123") {
+    id
+    username
+    email
+    created_at
+    updated_at
+  }
+}
+
+
+query {
+  employee(id: "60c72b2f9b1e8b003f0b6f49") {
+    id
+    first_name
+    last_name
+    email
+    gender
+    designation
+    salary
+    department
+    created_at
+    updated_at
+  }
+}
+
+
+mutation {
+  addEmployee(
+    first_name: "John",
+    last_name: "Doe",
+    email: "johndoe@example.com",
+    gender: "Male",
+    designation: "Software Engineer",
+    salary: 60000,
+    department: "Engineering",
+    employee_photo: "http://example.com/photo.jpg"
+  ) {
+    id
+    first_name
+    last_name
+    email
+    gender
+    designation
+    salary
+    department
+    created_at
+    updated_at
+  }
+}
