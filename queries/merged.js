@@ -58,13 +58,13 @@ const RootQuery = new GraphQLObjectType({
             department: { type: GraphQLString }
             },
             async resolve(_, { designation, department }) {
-            const filter = {};
-            if (designation) filter.designation = designation;
-            if (department) filter.department = department;
-            return await Employee.find(filter);
-            }
+              const filter = {};
+              if (designation) filter.designation = { $regex: new RegExp(designation, 'i') };;
+              if (department) filter.department = { $regex: new RegExp(department, 'i') };;
+              return await Employee.find(filter);
+              }
+
         }
     }
 });
-
 module.exports = RootQuery;
